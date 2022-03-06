@@ -6,11 +6,23 @@ function newBourbon(req, res) {
   })
 }
 
+// function create(req, res) {
+//   const bourbon = new Bourbon(req.body)
+//   bourbon.save(function(err) {
+//     if (err) return res.redirect('bourbons/new')
+//     res.redirect('/bourbons')
+//   })
+// }
+
 function create(req, res) {
-  const bourbon = new Bourbon(req.body)
-  bourbon.save(function(err) {
-    if (err) return res.redirect('bourbons/new')
+  req.body.owner = req.user.profile._id
+  Bourbon.create(req.body)
+  .then(bourbon => {
     res.redirect('/bourbons')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/bourbons/new')
   })
 }
 
