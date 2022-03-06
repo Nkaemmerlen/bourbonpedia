@@ -1,0 +1,15 @@
+import { Router } from "express"
+const router = Router()
+import * as bourbonsCtrl from '../controllers/bourbons.js'
+import { isLoggedIn } from '../middleware/middleware.js'
+
+
+router.get('/new', isLoggedIn, bourbonsCtrl.new)
+router.post('/', isLoggedIn, bourbonsCtrl.create)
+router.get('/', isLoggedIn, bourbonsCtrl.index)
+
+
+
+export {
+  router
+}

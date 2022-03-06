@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1>Enter a new bourbon</h1>
+  <form action="/bourbons" method="POST">
+    <label>Name:
+      <input type="text" name="name">
+    </label>
+    <label>Years Aged:
+      <input type="text" name="age">
+    </label>
+    <label>Mash Bill:
+      <select name="bill">
+        <option value="High corn">High Corn</option>
+        <option value="High barley">High Barley</option>
+        <option value="High rye">High Rye</option>
+      </select>
+    </label>
+    <button type="submit">Add Bourbon</button>
+  </form>
+</main>
+
+<%- include("../partials/footer") %>

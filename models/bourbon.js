@@ -11,11 +11,20 @@ const reviewSchema = new Schema ({
   }
 })
 
+const priceSchema = new Schema ({
+  price: Number,
+  area: String
+})
 
 const bourbonSchema = new Schema ({
   name: String,
-  year: Number,
-  price: Number,
+  age: Number,
+  bill: {
+    type: String,
+    enum: ['High Corn', 'High Barley', 'High Rye'],
+    default: 'High Corn'
+  },
+  price: [priceSchema],
   owner: {
     type: Schema.Types.ObjectId, 
     ref: "Profile"},
