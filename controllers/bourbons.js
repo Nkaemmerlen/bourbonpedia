@@ -39,10 +39,23 @@ function show(req, res) {
   })
 }
 
+function createReview(req, res) {
+  Bourbon.findById(req.params.id)
+  .then(bourbon => {
+    bourbon.reviews.push(req.body)
+    bourbon.save()
+    res.redirect(`/bourbons/${bourbon._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
 
 export {
   newBourbon as new,
   create,
   index,
-  show
+  show,
+  createReview
 }

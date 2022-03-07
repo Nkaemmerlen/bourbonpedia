@@ -1,9 +1,52 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
-<section>
-  <h1><%= bourbon.name %></h1>
-  <h2>This bourbon was aged for <%= bourbon.age %> years</h2>
-  <h2>hash bill: <%= bourbon.bill %> </h2>
-</section>
+<main>
+  <section>
+    <h1><%= bourbon.name %></h1>
+    <h2>This bourbon was aged for <%= bourbon.age %> years</h2>
+    <h2>hash bill: <%= bourbon.bill %> </h2>
+  </section>
+  <h1>Reviews</h1>
+  <form action="/bourbons/<%= bourbon._id %>/reviews" method="POST"
+  >
+  <textarea name="content"></textarea>
+    <label for="content-textarea">Review:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <button type="submit">Add Review</button>
+  </form>
+  <% if (bourbon.reviews.length) { %> 
+    <table>
+      <thead>
+        <tr>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% bourbon.reviews.forEach(function(review) { %>
+          <% total+= review.rating %>
+          <tr>
+            <td><%= review.content %></td>
+            <td><%= review.rating %> </td>
+          </tr> 
+        <% }) %> 
+        <tr>
+          <td colspan="2"></td>
+          <td>
+            <strong><%= (total / bourbon.reviews.length).toFixed(1) %> </strong>
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No reviews yet</h3>
+  <% } %>  
+</main>
 <%- include('../partials/footer') %>
