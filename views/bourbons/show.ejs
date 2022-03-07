@@ -1,6 +1,11 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <main>
+  <% if (bourbon.owner.equals(user?.profile._id)) { %>
+    <form action="/bourbons/<%= bourbon._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete this bourbon</button>
+    </form> 
+  <% } %> 
   <section>
     <h1><%= bourbon.name %></h1>
     <h2>This bourbon was aged for <%= bourbon.age %> years</h2>

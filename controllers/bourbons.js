@@ -50,6 +50,23 @@ function createReview(req, res) {
     console.log(err)
   })
 }
+function deleteBourbon(req, res) {
+  Bourbon.findById(req.params.id)
+  .then(bourbon => {
+    if(bourbon.owner.equals(req.user.profile._id)) {
+      bourbon.delete()
+      .then(() => {
+        res.redirect('/bourbons')
+      })
+    } else {
+      throw new Error ('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/bourbons')
+  })
+}
 
 
 export {
@@ -57,5 +74,6 @@ export {
   create,
   index,
   show,
-  createReview
+  createReview,
+  deleteBourbon as delete
 }

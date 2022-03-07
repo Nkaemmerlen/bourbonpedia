@@ -9,6 +9,7 @@ router.post('/', isLoggedIn, bourbonsCtrl.create)
 router.get('/', isLoggedIn, bourbonsCtrl.index)
 router.get('/:id', isLoggedIn, bourbonsCtrl.show)
 router.post('/:id/reviews', isLoggedIn, bourbonsCtrl.createReview)
+router.delete('/:id', isLoggedIn, bourbonsCtrl.delete)
 
 
 
