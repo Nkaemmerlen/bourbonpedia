@@ -28,6 +28,16 @@
     </select>
     <button type="submit">Add Review</button>
   </form>
+  <h1>Prices</h1>
+  <form action="/bourbons/<%= bourbon._id %>/prices" method="POST"
+  >
+  <textarea name="area"></textarea>
+  <label for="area-textcontent">Where did you buy it?</label>
+  <label>Price paid:
+    <input type="text" name="price">
+  </label>
+  <button type="submit">Add Price</button>
+  </form>
   <% if (bourbon.reviews.length) { %> 
     <table>
       <thead>
@@ -55,6 +65,7 @@
     </table>
   <% } else { %>
     <h3>No reviews yet</h3>
-  <% } %>  
+  <% } %>
+
 </main>
 <%- include('../partials/footer') %>

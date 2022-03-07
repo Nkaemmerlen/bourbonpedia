@@ -12,6 +12,7 @@ router.post('/:id/reviews', isLoggedIn, bourbonsCtrl.createReview)
 router.delete('/:id', isLoggedIn, bourbonsCtrl.delete)
 router.get('/:id/edit', isLoggedIn, bourbonsCtrl.edit)
 router.put('/:id', isLoggedIn, bourbonsCtrl.update)
+router.post('/:id/prices', isLoggedIn, bourbonsCtrl.createPrice)
 
 
 

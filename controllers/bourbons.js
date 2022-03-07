@@ -44,7 +44,23 @@ function createReview(req, res) {
   .then(bourbon => {
     bourbon.reviews.push(req.body)
     bourbon.save()
-    res.redirect(`/bourbons/${bourbon._id}`)
+    .then(()=>{
+      res.redirect(`/bourbons/${bourbon._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
+function createPrice(req, res) {
+  Bourbon.findById(req.params.id)
+  .then(bourbon => {
+    bourbon.price.push(req.body)
+    bourbon.save()
+    .then(()=>{
+      res.redirect(`/bourbons/${bourbon._id}`)
+    })
   })
   .catch(err => {
     console.log(err)
@@ -108,5 +124,6 @@ export {
   createReview,
   deleteBourbon as delete,
   edit,
-  update
+  update,
+  createPrice
 }
