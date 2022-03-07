@@ -8,7 +8,10 @@ const reviewSchema = new Schema ({
     min: 1,
     max: 5,
     default: 5
-  }
+  },
+  owner: {
+    type: Schema.Types.ObjectId, 
+    ref: "Profile"}
 })
 
 const priceSchema = new Schema ({

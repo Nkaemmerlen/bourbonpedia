@@ -1,12 +1,21 @@
 <%- include('../partials/html-head') %>
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <%- include('../partials/nav') %>
 <main>
   <% if (bourbon.owner.equals(user?.profile._id)) { %>
     <form action="/bourbons/<%= bourbon._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete this bourbon</button>
+      <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
+        <span class="mdc-button__label">Delete this Bourbon</span>
+      </button>
     </form>
     <form action="/bourbons/<%= bourbon._id %>/edit" method="GET">
-      <button type="submit">Edit this Bourbon</button>
+      <button class="mdc-button mdc-button--raised" type="submit">
+        <span class="mdc-button__label">Edit this bourbon</span>
+      </button>
     </form> 
   <% } %> 
   <section>
