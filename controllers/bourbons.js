@@ -56,7 +56,7 @@ function createReview(req, res) {
 function createPrice(req, res) {
   Bourbon.findById(req.params.id)
   .then(bourbon => {
-    bourbon.price.push(req.body)
+    bourbon.prices.push(req.body)
     bourbon.save()
     .then(()=>{
       res.redirect(`/bourbons/${bourbon._id}`)

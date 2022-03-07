@@ -27,7 +27,7 @@ const bourbonSchema = new Schema ({
     enum: ['High Corn', 'High Wheat', 'High Rye'],
     default: 'High Corn'
   },
-  price: [priceSchema],
+  prices: [priceSchema],
   owner: {
     type: Schema.Types.ObjectId, 
     ref: "Profile"},

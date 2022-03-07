@@ -75,6 +75,32 @@
   <% } else { %>
     <h3>No reviews yet</h3>
   <% } %>
+  <% if (bourbon.prices.length) { %> 
+    <table>
+      <thead>
+        <tr>
+          <th>location</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <% let total = 0 %>
+      <% bourbon.prices.forEach(function(price) { %>  
+        <% total += price.price %> 
+        <tr>
+          <td><%= price.area %> </td>
+          <td><%= price.price %></td>
+        </tr>
+      <% }) %> 
+        <tr>
+          <td colspan="2"></td>
+          <td>
+            <strong><%= (total / bourbon.prices.length).toFixed(2) %> </strong>
+          </td>
+        </tr>
+    </table>
+    <% } else { %> 
+      <h3>No Prices yet</h3>
+    <% } %> 
 
 </main>
 <%- include('../partials/footer') %>
