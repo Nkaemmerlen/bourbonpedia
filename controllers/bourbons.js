@@ -67,6 +67,19 @@ function deleteBourbon(req, res) {
     res.redirect('/bourbons')
   })
 }
+function edit(req, res) {
+  Bourbon.findById(req.params.id)
+  .then(bourbon => {
+    res.render('bourbons/edit', {
+      bourbon,
+      title: 'Edit bourbon'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/bourbons')
+  })
+}
 
 
 export {
@@ -75,5 +88,6 @@ export {
   index,
   show,
   createReview,
-  deleteBourbon as delete
+  deleteBourbon as delete,
+  edit
 }

@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<section>
+  <h1>Edit this Bourbon</h1>
+  <form action="/bourbons/<%= bourbon._id %>?_method=PUT" method="POST">
+    <label>
+      Name:
+      <input type="text" name="name" value="<%= bourbon.name %>" autocomplete="off">
+    </label>
+    <label>
+      Years aged:
+      <input type="text" name="age" value="<%= bourbon.age %>" autocomplete="off">
+    </label>
+    <label>
+      Mash Bill:
+      <select name="bill" value="<%= bourbon.bill %>">
+        <option value="High Corn">High Corn</option>
+        <option value="High Wheat">High Wheat</option>
+        <option value="High Rye">High Rye</option>
+      </select>
+    </label>
+    <button type="submit">Edit Bouron</button>
+  </form>
+</section>
+
+
+
+<%- include('../partials/footer') %>

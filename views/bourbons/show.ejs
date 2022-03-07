@@ -4,6 +4,9 @@
   <% if (bourbon.owner.equals(user?.profile._id)) { %>
     <form action="/bourbons/<%= bourbon._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete this bourbon</button>
+    </form>
+    <form action="/bourbons/<%= bourbon._id %>/edit" method="GET">
+      <button type="submit">Edit this Bourbon</button>
     </form> 
   <% } %> 
   <section>
