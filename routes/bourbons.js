@@ -7,6 +7,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 router.get('/new', isLoggedIn, bourbonsCtrl.new)
 router.post('/', isLoggedIn, bourbonsCtrl.create)
 router.get('/', isLoggedIn, bourbonsCtrl.index)
+router.get('/:id', isLoggedIn, bourbonsCtrl.show)
 
 
 

@@ -6,14 +6,6 @@ function newBourbon(req, res) {
   })
 }
 
-// function create(req, res) {
-//   const bourbon = new Bourbon(req.body)
-//   bourbon.save(function(err) {
-//     if (err) return res.redirect('bourbons/new')
-//     res.redirect('/bourbons')
-//   })
-// }
-
 function create(req, res) {
   req.body.owner = req.user.profile._id
   Bourbon.create(req.body)
@@ -36,10 +28,21 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Bourbon.findById(req.params.id)
+  .populate('owner')
+  .then(bourbon => {
+    res.render('bourbons/show', {
+      bourbon,
+      title: 'Details'
+    })
+  })
+}
 
 
 export {
   newBourbon as new,
   create,
-  index
+  index,
+  show
 }
