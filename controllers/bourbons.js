@@ -81,6 +81,24 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Bourbon.findById(req.params.id)
+  .then(bourbon => {
+    if (bourbon.owner.equals(req.user.profile._id)) {
+      bourbon.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/bourbons/${bourbon._id}`)
+      })
+    } else {
+      throw new Error ('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/bourbons')
+  })
+}
+
 
 export {
   newBourbon as new,
@@ -89,5 +107,6 @@ export {
   show,
   createReview,
   deleteBourbon as delete,
-  edit
+  edit,
+  update
 }
