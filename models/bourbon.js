@@ -24,8 +24,8 @@ const bourbonSchema = new Schema ({
   age: Number,
   bill: {
     type: String,
-    enum: ['High Corn', 'High Wheat', 'High Rye'],
-    default: 'High Corn'
+    enum: ['High Corn', 'High Wheat', 'High Rye', 'Unknown'],
+    default: 'Unknown'
   },
   prices: [priceSchema],
   owner: {
