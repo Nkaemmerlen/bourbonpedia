@@ -9,11 +9,16 @@
         <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
           <span class="mdc-button__ripple"></span>
           <i class="material-icons mdc-button__icon" aria-hidden="true">logout</i>
-          <span class="mdc-button__label">logout</span>
+          <span class="mdc-button__label">Logout</span>
         </button>
         <a
-        href="/bourbons/new" <%- title === "Add Bourbons" ? 'class="active"' : '' %>>ADD BOURBONS</a>
-      </a>
+        href="/bourbons/new" <%- title === "Add Bourbons" ? 'class="active"' : '' %>>
+        <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
+          <span class="mdc-button__ripple"></span>
+          <i class="material-icons mdc-button__icon" aria-hidden="true">add</i>
+          <span class="mdc-button__label">Add Bourbon</span>
+        </button>
+        </a>
       <% } else { %>
         <a href="/auth/google" class="siwg-link">
           <button type="submit" class="siwg">
@@ -21,6 +26,18 @@
           </button>
         </a>
         <% } %>
-        <a href="/bourbons" <%- title === 'All Bourbons' ? 'class="active"' : '' %>>ALL BOURBONS</a>
-        <a href="/profiles">Users</a>
+        <a href="/bourbons" <%- title === 'All Bourbons' ? 'class="active"' : '' %>>
+          <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">list</i>
+            <span class="mdc-button__label">View all Bourbons</span>
+          </button>
+        </a>
+        <a href="/profiles">
+          <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">person</i>
+            <span class="mdc-button__label">MEMBERS</span>
+          </button>
+        </a>
   </nav>

@@ -3,11 +3,25 @@
 <main>
   <h1>Enter a new bourbon</h1>
   <form action="/bourbons" method="POST">
-    <label>Name:
-      <input type="text" name="name">
+    <label class="mdc-text-field mdc-text-field--outlined">
+      <span class="mdc-notched-outline">
+        <span class="mdc-notched-outline__leading"></span>
+        <span class="mdc-notched-outline__notch">
+          <span class="mdc-floating-label" id="my-label-id">Name</span>
+        </span>
+        <span class="mdc-notched-outline__trailing"></span>
+      </span>
+      <input type="text" name="name" class="mdc-text-field__input" aria-labelledby="my-label-id">
     </label>
-    <label>Years Aged:
-      <input type="text" name="age">
+    <label class="mdc-text-field mdc-text-field--outlined">
+      <span class="mdc-notched-outline">
+        <span class="mdc-notched-outline__leading"></span>
+        <span class="mdc-notched-outline__notch">
+          <span class="mdc-floating-label" id="my-label-id">Years Aged</span>
+        </span>
+        <span class="mdc-notched-outline__trailing"></span>
+      </span>
+      <input type="text" name="age" class="mdc-text-field__input" aria-labelledby="my-label-id">
     </label>
     <label>Mash Bill:
       <select name="bill">
@@ -17,7 +31,12 @@
         <option value="Unknown" selected>Unknown</option>
       </select>
     </label>
-    <button type="submit">Add Bourbon</button>
+    <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
+      <span class="mdc-button__ripple"></span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">liquor</i>
+      <span class="mdc-button__label">Add Bourbon</span>
+    </button>
+    
   </form>
 </main>
 
