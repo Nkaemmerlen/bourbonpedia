@@ -1,25 +1,28 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/public/stylesheets/mt.css">
 <%- include('../partials/nav') %>
 <main>
   <h1>Bourbon List</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Years Aged</th>
-        <th>Mash Bill</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% bourbons.forEach(function(bourbon) { %>
+  <div class="mdc-card">
+    <table>
+      <thead>
         <tr>
-          <td><%= bourbon.name %></td>
-          <td><%= bourbon.age %></td>
-          <td><%= bourbon.bill %></td>
-          <td><a href="/bourbons/<%= bourbon._id %>">DETAILS</a></td>
+          <th>Name</th>
+          <th>Years Aged</th>
+          <th>Mash Bill</th>
         </tr>
-      <% }) %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% bourbons.forEach(function(bourbon) { %>
+          <tr>
+            <td><%= bourbon.name %></td>
+            <td><%= bourbon.age %></td>
+            <td><%= bourbon.bill %></td>
+            <td><a href="/bourbons/<%= bourbon._id %>">DETAILS</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
 </main>
 <%- include('../partials/footer') %>

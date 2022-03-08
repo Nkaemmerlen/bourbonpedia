@@ -26,7 +26,16 @@
   <h1>Reviews</h1>
   <form action="/bourbons/<%= bourbon._id %>/reviews" method="POST"
   >
-  <textarea name="content"></textarea>
+  <label class="mdc-text-field mdc-text-field--outlined">
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" id="my-label-id">Your Review...</span>
+      </span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <input type="text" name="content" class="mdc-text-field__input" aria-labelledby="my-label-id">
+  </label>
     <label for="content-textarea">Review:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -40,10 +49,25 @@
   <h1>Prices</h1>
   <form action="/bourbons/<%= bourbon._id %>/prices" method="POST"
   >
-  <textarea name="area"></textarea>
-  <label for="area-textcontent">Where did you buy it?</label>
-  <label>Price paid:
-    <input type="text" name="price">
+  <label class="mdc-text-field mdc-text-field--outlined">
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" id="my-label-id">Where did you buy it?</span>
+      </span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <input type="text" name="area" class="mdc-text-field__input" aria-labelledby="my-label-id">
+  </label>
+  <label class="mdc-text-field mdc-text-field--outlined">
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" id="my-label-id">Price paid</span>
+      </span>
+      <span class="mdc-notched-outline__trailing"></span>
+    </span>
+    <input type="text" name="price" class="mdc-text-field__input" aria-labelledby="my-label-id">
   </label>
   <button type="submit">Add Price</button>
   </form>

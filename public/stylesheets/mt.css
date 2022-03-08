@@ -1,0 +1,11 @@
+.my-card-content {
+  padding: 16px;
+  align-self: auto;
+}
+table {
+  align-content: center;
+}
+.my-card {
+  height: 350px;
+  width: 350px;
+}
