@@ -15,10 +15,12 @@
       <tbody>
         <% bourbons.forEach(function(bourbon) { %>
           <tr>
-            <td><%= bourbon.name %></td>
-            <td><%= bourbon.age %></td>
-            <td><%= bourbon.bill %></td>
-            <td><a href="/bourbons/<%= bourbon._id %>">DETAILS</a></td>
+            <div class="mdc-card">
+              <td><%= bourbon.name %></td>
+              <td><%= bourbon.age %></td>
+              <td><%= bourbon.bill %></td>
+              <td><a href="/bourbons/<%= bourbon._id %>">DETAILS</a></td>
+            </div>
           </tr>
         <% }) %>
       </tbody>

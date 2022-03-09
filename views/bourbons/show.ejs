@@ -26,15 +26,10 @@
   <h1>Reviews</h1>
   <form action="/bourbons/<%= bourbon._id %>/reviews" method="POST"
   >
-  <label class="mdc-text-field mdc-text-field--outlined">
-    <span class="mdc-notched-outline">
-      <span class="mdc-notched-outline__leading"></span>
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id="my-label-id">Your Review...</span>
-      </span>
-      <span class="mdc-notched-outline__trailing"></span>
-    </span>
-    <input type="text" name="content" class="mdc-text-field__input" aria-labelledby="my-label-id">
+  <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+    <span class="mdc-text-field__ripple"></span>
+    <input class="mdc-text-field__input" name="content" type="text" placeholder="Your review..." aria-label="Label">
+    <span class="mdc-line-ripple"></span>
   </label>
     <label for="content-textarea">Review:</label>
     <select name="rating">
@@ -49,25 +44,15 @@
   <h1>Prices</h1>
   <form action="/bourbons/<%= bourbon._id %>/prices" method="POST"
   >
-  <label class="mdc-text-field mdc-text-field--outlined">
-    <span class="mdc-notched-outline">
-      <span class="mdc-notched-outline__leading"></span>
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id="my-label-id">Where did you buy it?</span>
-      </span>
-      <span class="mdc-notched-outline__trailing"></span>
-    </span>
-    <input type="text" name="area" class="mdc-text-field__input" aria-labelledby="my-label-id">
+  <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+    <span class="mdc-text-field__ripple"></span>
+    <input class="mdc-text-field__input" name="are" type="text" placeholder="Where did you buy it?" aria-label="Label">
+    <span class="mdc-line-ripple"></span>
   </label>
-  <label class="mdc-text-field mdc-text-field--outlined">
-    <span class="mdc-notched-outline">
-      <span class="mdc-notched-outline__leading"></span>
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id="my-label-id">Price paid</span>
-      </span>
-      <span class="mdc-notched-outline__trailing"></span>
-    </span>
-    <input type="text" name="price" class="mdc-text-field__input" aria-labelledby="my-label-id">
+  <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+    <span class="mdc-text-field__ripple"></span>
+    <input class="mdc-text-field__input" name="price" type="text" placeholder="How much did you pay?" aria-label="Label">
+    <span class="mdc-line-ripple"></span>
   </label>
   <button type="submit">Add Price</button>
   </form>

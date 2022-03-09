@@ -3,25 +3,15 @@
 <main>
   <h1>Enter a new bourbon</h1>
   <form action="/bourbons" method="POST">
-    <label class="mdc-text-field mdc-text-field--outlined">
-      <span class="mdc-notched-outline">
-        <span class="mdc-notched-outline__leading"></span>
-        <span class="mdc-notched-outline__notch">
-          <span class="mdc-floating-label" id="my-label-id">Name</span>
-        </span>
-        <span class="mdc-notched-outline__trailing"></span>
-      </span>
-      <input type="text" name="name" class="mdc-text-field__input" aria-labelledby="my-label-id">
+    <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+      <span class="mdc-text-field__ripple"></span>
+      <input class="mdc-text-field__input" name="name" type="text" placeholder="name" aria-label="Label">
+      <span class="mdc-line-ripple"></span>
     </label>
-    <label class="mdc-text-field mdc-text-field--outlined">
-      <span class="mdc-notched-outline">
-        <span class="mdc-notched-outline__leading"></span>
-        <span class="mdc-notched-outline__notch">
-          <span class="mdc-floating-label" id="my-label-id">Years Aged</span>
-        </span>
-        <span class="mdc-notched-outline__trailing"></span>
-      </span>
-      <input type="text" name="age" class="mdc-text-field__input" aria-labelledby="my-label-id">
+    <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+      <span class="mdc-text-field__ripple"></span>
+      <input class="mdc-text-field__input" name="age" type="text" placeholder="Years aged" aria-label="Label">
+      <span class="mdc-line-ripple"></span>
     </label>
     <label>Mash Bill:
       <select name="bill">
