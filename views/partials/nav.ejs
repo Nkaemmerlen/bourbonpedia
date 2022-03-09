@@ -1,43 +1,38 @@
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
-</head>
-<body>
-  <nav>
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Bourbonpedia</a>
     <% if (user) { %>
       <a href="/auth/logout">
-        <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
-          <span class="mdc-button__ripple"></span>
-          <i class="material-icons mdc-button__icon" aria-hidden="true">logout</i>
-          <span class="mdc-button__label">Logout</span>
-        </button>
-        <a
-        href="/bourbons/new" <%- title === "Add Bourbons" ? 'class="active"' : '' %>>
-        <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
-          <span class="mdc-button__ripple"></span>
-          <i class="material-icons mdc-button__icon" aria-hidden="true">add</i>
-          <span class="mdc-button__label">Add Bourbon</span>
-        </button>
+        logout
         </a>
-      <% } else { %>
-        <a href="/auth/google" class="siwg-link">
-          <button type="submit" class="siwg">
-            <img id="siwg-image" alt="Sign in with Google" />
-          </button>
-        </a>
-        <% } %>
-        <a href="/bourbons" <%- title === 'All Bourbons' ? 'class="active"' : '' %>>
-          <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
-            <span class="mdc-button__ripple"></span>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">list</i>
-            <span class="mdc-button__label">View all Bourbons</span>
-          </button>
-        </a>
-        <a href="/profiles">
-          <button class="mdc-button mdc-button--raised mdc-button--leading" type="submit">
-            <span class="mdc-button__ripple"></span>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">person</i>
-            <span class="mdc-button__label">MEMBERS</span>
-          </button>
-        </a>
-  </nav>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with Google" />
+            </button>
+          </a>
+          <% } %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bourbons/new">New Bourbon</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bourbons">All Bourbons</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profiles">All Users</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
