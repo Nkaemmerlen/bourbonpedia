@@ -23,7 +23,7 @@
     <h2>This bourbon was aged for <%= bourbon.age %> years</h2>
     <h2>hash bill: <%= bourbon.bill %> </h2>
   </section>
-  <h1>Reviews</h1>
+  <h2>Post a Review:</h2>
   <form action="/bourbons/<%= bourbon._id %>/reviews" method="POST"
   >
   <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
@@ -41,7 +41,7 @@
     </select>
     <button type="submit">Add Review</button>
   </form>
-  <h1>Prices</h1>
+  <h2>List a Price:</h2>
   <form action="/bourbons/<%= bourbon._id %>/prices" method="POST"
   >
   <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
@@ -60,8 +60,8 @@
     <table>
       <thead>
         <tr>
-          <th>Review</th>
-          <th>Rating</th>
+          <th>Reviews</th>
+          <th>Ratings</th>
         </tr>
       </thead>
       <tbody>
