@@ -15,16 +15,15 @@
       <tbody>
         <% bourbons.forEach(function(bourbon) { %>
           <tr>
-            <div class="mdc-card">
-              <td><%= bourbon.name %></td>
-              <td><%= bourbon.age %></td>
-              <td><%= bourbon.bill %></td>
-              <td><a href="/bourbons/<%= bourbon._id %>">DETAILS</a></td>
-            </div>
+            <td><%= bourbon.name %></td>
+            <td><%= bourbon.age %></td>
+            <td><%= bourbon.bill %></td>
+            <td><a href="/bourbons/<%= bourbon._id %>" class="details">DETAILS</a></td>
           </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <img class="indeximage" src="https://i.imgur.com/Sl500Tc.png" width="800px" height="800px">
 </main>
 <%- include('../partials/footer') %>

@@ -6,7 +6,10 @@
     <a class="navbar-brand" href="#">Bourbonpedia</a>
     <% if (user) { %>
       <a href="/auth/logout">
-        logout
+        <i class="material-icons" aria-hidden="true">logout</i>
+        <span class="material-icons-outlined">
+          logout
+          </span>
         </a>
         <% } else { %>
           <a href="/auth/google" class="siwg-link">
