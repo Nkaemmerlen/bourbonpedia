@@ -3,9 +3,11 @@
 In this open sourced bourbon web application you can add your favorite bourbons from all around the world and give them your honest review! You can also add where you bought and how much you bought it for.
 
 > click this [link](https://bourbonpedia.herokuapp.com) to get started!
+
 > Initial project prep [link](https://trello.com/b/CHZRV1pj/bourbonpedia)
 
 ![Bourbonpedia](https://i.imgur.com/e3TfYuD.png)
+
 ![Initial ERD](https://i.imgur.com/5oFW9j0.png)
 
 
