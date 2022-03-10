@@ -20,3 +20,4 @@ In this open sourced bourbon web application you can add your favorite bourbons 
 - Following other profiles 
 - Add images to bourbons
 - Customize profile page
+- Search bar for profiles and bourbons
